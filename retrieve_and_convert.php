@@ -111,7 +111,8 @@ foreach ($table_names as $table_name){
             }
 
             $appends = [];
-            if($null == 'YES' && in_array($field_type_name, $nullable_field_types)){
+            //if($null == 'YES' && in_array($field_type_name, $nullable_field_types)){
+            if($null == 'YES'){
                 $appends []= '->nullable()';
             }
             if(in_array('unsigned', $field_type_settings) && $field_type_name != 'increments'){
